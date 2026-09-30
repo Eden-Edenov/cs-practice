@@ -24,3 +24,6 @@ for i in range(recorded):
             above_limit += 1
 
         maximum = max(maximum,current_temp)
+
+average = summ_tepm/not_errors
+
