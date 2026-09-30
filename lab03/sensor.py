@@ -27,3 +27,8 @@ for i in range(recorded):
 
 average = summ_tepm/not_errors
 
+print(recorded)
+print(cnt_errors)
+print(above_limit)
+print(f"{maximum:.1f}")
+print(f"{average:.1f}")
