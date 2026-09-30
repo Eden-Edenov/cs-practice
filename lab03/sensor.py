@@ -22,3 +22,5 @@ for i in range(recorded):
 
         if current_temp > limit:
             above_limit += 1
+
+        maximum = max(maximum,current_temp)
