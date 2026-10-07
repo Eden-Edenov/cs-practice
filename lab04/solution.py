@@ -8,3 +8,13 @@ def winner(name,scor):
 
     return win
 
+def average(scor):
+    if scor == []:
+        return 0.0
+    cnt = 0
+    summa = 0
+    for i in scor:
+        cnt += 1
+        summa += i
+
+    return f'{summa/cnt:.2f}'
