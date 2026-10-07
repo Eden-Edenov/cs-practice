@@ -18,3 +18,12 @@ def average(scor):
         summa += i
 
     return f'{summa/cnt:.2f}'
+
+def above_average(name,scor):
+    above = []
+    aver = average(scor)
+    for i in range(len(scor)):
+        if scor[i] > aver:
+            above.append(name[i])
+
+    return above
