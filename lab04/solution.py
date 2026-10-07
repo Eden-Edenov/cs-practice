@@ -19,6 +19,12 @@ def average(scor):
 
     return f'{summa/cnt:.2f}'
 
+def ranking(name,scor):
+    new_names = list(range(len(name)))
+    new_names.sort(key=lambda i: scor[i], reverse=True)
+
+    return [name[i] for i in new_names]
+
 def above_average(name,scor):
     above = []
     aver = average(scor)
