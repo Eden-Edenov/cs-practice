@@ -1,35 +1,24 @@
-def winner(name,scor):
-    win = -1
-    maximum = -1
-    for i in range(len(scor)):
-        if scor[i] > maximum:
-            maximum = scor[i]
-            win = name[i]
+def winner(names: list[str], scores: list[float]) -> str:
+    if not scores or not names:
+        return ""
+    best_index = max(range(len(scores)), key=lambda i: scores[i])
+    return names[best_index]
 
-    return win
 
-def average(scor):
-    if scor == []:
+def average(scores: list[float]) -> float:
+    if not scores:
         return 0.0
-    cnt = 0
-    summa = 0
-    for i in scor:
-        cnt += 1
-        summa += i
 
-    return f'{summa/cnt:.2f}'
+    return round(sum(scores) / len(scores), 2)
 
-def ranking(name,scor):
-    new_names = list(range(len(name)))
-    new_names.sort(key=lambda i: scor[i], reverse=True)
 
-    return [name[i] for i in new_names]
+def ranking(names: list[str], scores: list[float]) -> list[str]:
+    indices = list(range(len(names)))
+    indices.sort(key=lambda i: scores[i], reverse=True)
 
-def above_average(name,scor):
-    above = []
-    aver = average(scor)
-    for i in range(len(scor)):
-        if scor[i] > aver:
-            above.append(name[i])
+    return [names[i] for i in indices]
 
-    return above
+
+def above_average(names: list[str], scores: list[float]) -> list[str]:
+    avg_score = average(scores)
+    return [names[i] for i in range(len(scores)) if scores[i] > avg_score]
