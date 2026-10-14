@@ -57,17 +57,17 @@ def to_csv(counts):
 
     return "\n".join(result) + "\n"
 
-with open('events.csv', encoding="utf-8") as table:
-    ans_rows = read_rows(table)
-    print(ans_rows)
-
-    ans_count = count_types(ans_rows)
-    print(ans_count)
-
-    ans_minutes = total_minutes(ans_rows,'ошибка')
-    print(ans_minutes)
-    ans_minutes = total_minutes(ans_rows, 'запуск')
-    print(ans_minutes)
-
-    ans_csv = to_csv(ans_count)
-    print(ans_csv)
+#with open('events.csv', encoding="utf-8") as table:
+    # ans_rows = read_rows(table)
+    # print(ans_rows)
+    #
+    # ans_count = count_types(ans_rows)
+    # print(ans_count)
+    #
+    # ans_minutes = total_minutes(ans_rows,'ошибка')
+    # print(ans_minutes)
+    # ans_minutes = total_minutes(ans_rows, 'запуск')
+    # print(ans_minutes)
+    #
+    # ans_csv = to_csv(ans_count)
+    # print(ans_csv)
