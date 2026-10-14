@@ -30,9 +30,33 @@ def count_types(ryad):
     return counts
 
 
+def total_minutes(rows, kind):
+    total = 0.0
+    has_kind = False
+
+    for row in rows:
+        if row.get("тип") == kind:
+            has_kind = True
+            minutes_str = row.get("минуты", "0")
+            minutes_str = minutes_str.replace(',', '.')
+            try:
+                total += float(minutes_str)
+            except ValueError:
+                continue
+
+    if not has_kind:
+        return 0.0
+
+    return round(total, 1)
 
 with open('events.csv', encoding="utf-8") as table:
     ans_rows = read_rows(table)
     print(ans_rows)
+
     ans_count = count_types(ans_rows)
     print(ans_count)
+
+    ans_minutes = total_minutes(ans_rows,'ошибка')
+    print(ans_minutes)
+    ans_minutes = total_minutes(ans_rows, 'запуск')
+    print(ans_minutes)
