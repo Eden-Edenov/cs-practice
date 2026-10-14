@@ -49,6 +49,14 @@ def total_minutes(rows, kind):
 
     return round(total, 1)
 
+def to_csv(counts):
+    result = ["тип,количество"]
+
+    for kind in sorted(counts.keys()):
+        result.append(f"{kind},{counts[kind]}")
+
+    return "\n".join(result) + "\n"
+
 with open('events.csv', encoding="utf-8") as table:
     ans_rows = read_rows(table)
     print(ans_rows)
@@ -60,3 +68,6 @@ with open('events.csv', encoding="utf-8") as table:
     print(ans_minutes)
     ans_minutes = total_minutes(ans_rows, 'запуск')
     print(ans_minutes)
+
+    ans_csv = to_csv(ans_count)
+    print(ans_csv)
