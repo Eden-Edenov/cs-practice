@@ -9,3 +9,6 @@ def unique_sorted(spisok):
 
 def common(list_first, list_second):
     return sorted(list(set(list_first) & set(list_second)))
+
+def only_in_first(list_first, list_second):
+    return sorted(list(set(list_first) - set(list_second)))
