@@ -23,3 +23,15 @@ def column_means(matrix: list[list[float]]) -> list[float]:
     means = np.mean(arr, axis=0)
     means_rounded = np.round(means, 6)
     return means_rounded.tolist()
+
+def column_range(matrix: list[list[float]], column: int) -> float:
+    if not matrix or len(matrix) == 0 or column >= len(matrix[0]):
+        return 0.0
+
+    arr = np.asarray(matrix, dtype=float)
+    col_data = arr[:, column]
+    col_min = np.min(col_data)
+    col_max = np.max(col_data)
+
+    span = col_max - col_min
+    return float(np.round(span, 6))
