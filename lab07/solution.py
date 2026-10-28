@@ -14,3 +14,12 @@ def block(matrix: list[list[float]], rows: list[int], columns: list[int]) -> lis
     arr = np.asarray(matrix, dtype=float)
     sub_block = arr[np.ix_(rows, columns)]
     return sub_block.tolist()
+
+def column_means(matrix: list[list[float]]) -> list[float]:
+    if not matrix or len(matrix) == 0 or len(matrix[0]) == 0:
+        return []
+
+    arr = np.asarray(matrix, dtype=float)
+    means = np.mean(arr, axis=0)
+    means_rounded = np.round(means, 6)
+    return means_rounded.tolist()
