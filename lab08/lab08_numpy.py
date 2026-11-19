@@ -79,3 +79,28 @@ part5 = matrix[-2:, -2:]
 print("Правый нижний блок 2x2:\n", part5)
 print("Shape:", part5.shape)
 print()
+
+
+
+vector = np.array([10, 20, 30, 40, 50])
+vector[1:4] = 0
+
+small_matrix = np.arange(1, 10).reshape(3, 3)
+small_matrix[0, :] = -1
+small_matrix[1:, 1:] = 9
+
+changed_hours = hours.copy()
+changed_hours[2:5] = 99
+changed_hours[1::2] = -1
+
+print("changed_hours:", changed_hours)
+print("Исходный hours:", hours)
+
+changed_matrix = matrix.copy()
+changed_matrix[1, :] = 0
+changed_matrix[:, -1] = -1
+changed_matrix[1:4, 1:4] = 100
+
+print("changed_matrix:\n", changed_matrix)
+print("Исходная matrix:\n", matrix)
+print()
