@@ -54,3 +54,28 @@ center_fragment = temperatures[0:2, 1:3]
 print("Центральный фрагмент 2x2:\n", center_fragment)
 print("Форма центрального фрагмента:", center_fragment.shape)
 print()
+
+
+
+matrix = np.arange(1, 26).reshape(5, 5)
+
+part1 = matrix[:3, :]
+print("Первые три строки:\n", part1)
+print("Shape:", part1.shape)
+
+part2 = matrix[-2:, :]
+print("Последние две строки:\n", part2)
+print("Shape:", part2.shape)
+
+part3 = matrix[:, :2]
+print("Первые два столбца:\n", part3)
+print("Shape:", part3.shape)
+
+part4 = matrix[1:4, 2:5]
+print("Строки 1-3, столбцы 2-4:\n", part4)
+print("Shape:", part4.shape)
+
+part5 = matrix[-2:, -2:]
+print("Правый нижний блок 2x2:\n", part5)
+print("Shape:", part5.shape)
+print()
