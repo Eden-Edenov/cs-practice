@@ -18,3 +18,14 @@ print("ndim:", hours.ndim)
 print("size:", hours.size)
 print("dtype:", hours.dtype)
 print()
+
+
+
+print("Третий элемент:", hours[2])
+
+print("Элементы с индексами 2-5:", hours[2:6])
+
+print("Каждый второй элемент:", hours[::2])
+
+print("В обратном порядке:", hours[::-1])
+print()
